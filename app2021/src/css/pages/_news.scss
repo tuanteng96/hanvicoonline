@@ -1,0 +1,379 @@
+.page-news {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 0%, rgba(241, 245, 248, 1) 100%);
+    &__header {
+        @include flexbox();
+        @include justify-content(space-between);
+        @include align-items(flex-end);
+        margin-bottom: 10px;
+        &-date {
+            .date {
+                color: $color-gray-app;
+                text-transform: uppercase;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            h3 {
+                margin: 0;
+                font-size: 26px;
+            }
+        }
+        &-user {
+            i {
+                color: $color-app;
+                font-size: 35px;
+            }
+        }
+    }
+    &__dear {
+        background: $white;
+        box-shadow: $shadow-box-top;
+        border-radius: .375rem;
+        overflow: hidden;
+        margin-bottom: 15px;
+        &-text {
+            padding: 15px;
+            h4 {
+                margin: 0 0 8px 0;
+                font-size: 20px;
+                line-height: 24px;
+                color: $black;
+                text-transform: capitalize;
+            }
+            .desc {
+                color: $color-gray-app;
+                font-size: 14px;
+                line-height: 20px;
+                p {
+                    margin: 0;
+                    @include cut-text;
+                }
+            }
+        }
+    }
+    &__cate {
+        display: flex;
+        box-sizing: border-box;
+        a {
+            text-align: center;
+            img {
+                width: 100%;
+                height: 80px;
+                border-radius: 10px;
+                object-fit: cover;
+                box-shadow: $shadow-box-top;
+            }
+            span {
+                display: block;
+                @include cut-text();
+                text-transform: uppercase;
+                line-height: 20px;
+                font-size: 12px;
+                margin-top: 8px;
+                font-weight: 600;
+                color: $black;
+            }
+        }
+    }
+    &__slide {
+        margin-top: 14px;
+        border-radius: .375rem;
+        overflow: hidden;
+        .slick-track {
+            margin: 0 -7.5px;
+            .slick-slide {
+                padding: 0 7.5px;
+            }
+        }
+        &-item {
+            box-shadow: 0 3px 20px rgba(0, 0, 0, .04);
+            outline: none;
+        }
+        .slick-dots {
+            bottom: 14px;
+            li {
+                margin: 0 3px;
+                width: auto;
+                height: auto;
+                button {
+                    padding: 0;
+                    width: 8px;
+                    height: 8px;
+                    background: $color-app;
+                    opacity: .5;
+                    border-radius: 100%;
+                    @include transition(all .2s linear);
+                    &::before {
+                        display: none;
+                    }
+                }
+                &.slick-active {
+                    button {
+                        opacity: 1;
+                        width: 22px;
+                        border-radius: 25px;
+                    }
+                }
+            }
+        }
+        .bg {
+            overflow: hidden;
+            height: 180px;
+            position: relative;
+            border-radius: 10px;
+            .image {
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                margin: 0;
+                padding: 0;
+                top: 0;
+                left: 0;
+                z-index: 2;
+                background-position: center top;
+                background-size: cover;
+                background-repeat: no-repeat;
+                opacity: 0.3;
+            }
+            .text {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                width: 100%;
+                top: 0;
+                left: 0;
+                padding: 1.25rem;
+                box-sizing: border-box;
+                h4 {
+                    margin: 0;
+                    font-size: 28px;
+                    line-height: 36px;
+                    color: $white;
+                    font-weight: 500;
+                }
+                .text-desc {
+                    opacity: 0.75;
+                    color: $white;
+                    margin: 5px 0 10px 0;
+                    p {
+                        margin: 0;
+                    }
+                }
+                .btns {
+                    @include flexbox();
+                    @include justify-content(flex-end);
+                    margin-top: 12px;
+                }
+                .btn-more {
+                    padding: 0.375rem .8rem;
+                    font-size: 12px;
+                    line-height: 20px;
+                    background-color: $white;
+                    color: $black;
+                    border-radius: 30px;
+                    display: inline-block;
+                }
+            }
+        }
+    }
+    &__list {
+        margin-top: 14px;
+        .slick-track {
+            margin: 0 -7px;
+            >div {
+                padding: 0 7px;
+            }
+        }
+        &-head {
+            @include flexbox;
+            @include justify-content(space-between);
+            @include align-items(flex-end);
+            margin-bottom: 14px;
+            h5 {
+                margin: 0;
+                font-size: 15px;
+                text-transform: uppercase;
+            }
+            .all {
+                a {
+                    color: $color-link-app;
+                    font-size: 13px;
+                    font-weight: 500;
+                }
+            }
+        }
+        &-item {
+            box-shadow: $shadow-menu;
+            background-color: $white;
+            border-radius: .375rem;
+            .text {
+                padding: 14px;
+                a {
+                    display: block;
+                }
+                h6 {
+                    margin: 0 0 8px 0;
+                    font-size: 15px;
+                    color: #000;
+                    font-weight: 600;
+                    @include cut-text-to(2);
+                }
+                .desc {
+                    color: $color-gray-app;
+                    font-size: 13px;
+                    line-height: 20px;
+                    p {
+                        margin: 0;
+                        @include cut-text;
+                    }
+                }
+            }
+        }
+    }
+    &__all {
+        margin-top: 0;
+        .page-news__list-item {
+            margin-bottom: 14px;
+        }
+        .page-news__list-item:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__detail {
+        background: $white;
+        &-img {
+            width: 100%;
+        }
+        &-content {
+            margin-top: -25px;
+            position: relative;
+            z-index: 2;
+            padding: $pd-app;
+            p {
+                margin: 0 0 10px 0;
+                &:last-child {
+                    margin: 0;
+                }
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        &-shadow {
+            box-shadow: 10px 0 50px rgba(18, 25, 33, 0.1);
+            padding: $pd-app;
+            text-align: justify;
+            background: $white;
+            line-height: 24px;
+            font-size: 15px;
+        }
+    }
+    &__product {
+        .list-product {
+            background-color: rgba(243, 236, 231, 0.85) !important;
+            margin: 0 -15px;
+            padding: 0 15px;
+            margin-top: 12px;
+            &__lst {
+                display: flex;
+                overflow-x: scroll;
+                padding: 15px 0;
+            }
+            a {
+                white-space: nowrap;
+                margin-right: 10px;
+                padding: 0.375rem .8rem;
+                font-size: 12px;
+                line-height: 20px;
+                background-color: $white;
+                color: $black;
+                border-radius: 30px;
+                transition: all .3s ease;
+                &.active {
+                    background-color: $black;
+                    color: $white;
+                }
+            }
+        }
+        .list-product-item {
+            padding-top: 15px;
+            .page-shop__list-item {
+                margin-bottom: 0;
+                box-shadow: none;
+                background: transparent;
+                .page-shop__list-img {
+                    img {
+                        border-radius: 10px;
+                        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.04);
+                    }
+                }
+                .page-shop__list-text {
+                    height: auto;
+                    h3 {
+                        padding: 0;
+                        white-space: inherit;
+                        @include cut-text-to(2);
+                    }
+                    .page-shop__list-price {
+                        @include justify-content(flex-start);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-news__list-policy {
+    .page-news__policy-item {
+        a {
+            color: $black;
+            background-color: rgba(243, 236, 231, 0.85);
+            border: 1px solid rgba(0, 0, 0, .125);
+            @include flexbox;
+            @include align-items(center);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            .icon {
+                height: 38px;
+                width: 38px;
+                background: $white;
+                border-radius: 8px;
+                @include flexbox;
+                @include align-items(center);
+                @include justify-content(center);
+                i {
+                    font-size: 22px;
+                    color: $color-price-app;
+                }
+            }
+            .text {
+                padding-left: 15px;
+                width: calc(100% - 38px);
+                box-sizing: border-box;
+                h6 {
+                    margin: 0;
+                    font-size: 14px;
+                }
+                .text-desc {
+                    font-size: 12px;
+                    display: block;
+                    p {
+                        margin: 0;
+                        @include cut-text();
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-news__list-ul .slick-track {
+    margin: 0 -7px;
+}
+
+.page-news__list-ul .slick-track>div {
+    padding: 0 7px;
+}

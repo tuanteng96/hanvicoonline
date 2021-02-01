@@ -1,0 +1,153 @@
+.btn-me {
+    position: relative;
+    &.loading {
+        pointer-events: none;
+        &:before {
+            margin: -13px 0 0 -13px;
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            content: '';
+            -webkit-border-radius: 24px;
+            -webkit-background-clip: padding-box;
+            -moz-border-radius: 24px;
+            -moz-background-clip: padding;
+            border-radius: 24px;
+            background-clip: padding-box;
+            border: rgba(255, 255, 255, 0.25) 2px solid;
+            border-top-color: #fff;
+            -webkit-animation: animation-rotate 750ms linear infinite;
+            -moz-animation: animation-rotate 750ms linear infinite;
+            -o-animation: animation-rotate 750ms linear infinite;
+            animation: animation-rotate 750ms linear infinite;
+        }
+        span {
+            color: transparent;
+            text-shadow: none;
+        }
+    }
+}
+
+.btn-login {
+    height: 42px;
+    border: 0;
+    background: $color-app;
+    border-radius: .125rem;
+    color: $white;
+    -webkit-box-shadow: 0px 0px 25px 0px rgba(126, 55, 216, 0.05);
+    box-shadow: 0px 0px 25px 0px rgba(126, 55, 216, 0.05);
+    text-transform: uppercase;
+    outline: none;
+    background-image: -webkit-gradient(linear, left top, right bottom, from(#005a96), to(#2c76a8));
+    background-image: linear-gradient(to bottom right, #005a96, #2c76a8);
+    -webkit-box-shadow: 2px 6px 29px 0px rgba(0, 90, 150, 0.24);
+    box-shadow: 2px 6px 29px 0px rgba(0, 90, 150, 0.24);
+    position: relative;
+    &.btn-no-image {
+        background-image: none;
+    }
+    &__loading {
+        width: 30%;
+        height: 100%;
+        background: radial-gradient(circle, #ffffff 50%, transparent 50%), radial-gradient(circle, #ffffff 50%, transparent 50%), radial-gradient(circle, #ffffff 50%, transparent 50%), radial-gradient(circle, #ffffff 50%, transparent 50%);
+        background-repeat: no-repeat;
+        background-position: 0 50%, 0 50%, 50% 50%, 100% 50%;
+        background-size: 35px 35px;
+        animation: move 0.5s both infinite cubic-bezier(0, 0.74, 0.65, 0.71);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 0;
+    }
+    &__text {
+        transition: all .3s ease;
+    }
+    &.btn--loading {
+        pointer-events: none;
+        .btn-login__loading {
+            opacity: 1;
+        }
+        .btn-login__text {
+            opacity: 0;
+        }
+    }
+}
+
+.btn-signout {
+    background: #f6f6f6;
+    color: #5a5a5a;
+    border: 0;
+    font-weight: bold;
+    padding: 12px 0;
+    border-radius: 5px;
+    font-family: $font-app;
+    font-size: 15px;
+    outline: none;
+}
+
+.btn-toolbar-book {
+    width: 100%;
+    padding: 8px 0;
+    border: 0;
+    background: $color-app;
+    color: $white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: $font-app;
+    border-radius: 2px;
+    outline: none;
+}
+
+.btn-reviews {
+    background: #f5f6f8;
+    border: 1px solid #f5f6f8;
+    padding: 12px 0;
+    border-radius: 25px;
+    color: #959595;
+    font-size: 14px;
+    outline: none;
+}
+
+.disabled-btn {
+    opacity: .7;
+    pointer-events: none;
+}
+
+@-webkit-keyframes animation-rotate {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-moz-keyframes animation-rotate {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-o-keyframes animation-rotate {
+    100% {
+        -o-transform: rotate(360deg);
+    }
+}
+
+@keyframes animation-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes move {
+    from {
+        background-position: 0 50%, 0 50%, 50% 50%, 100% 50%;
+        background-size: 5px 5px, 25px 25px, 25px 25px, 25px 25px;
+    }
+    to {
+        background-position: 0 50%, 50% 50%, 100% 50%, 100% 50%;
+        background-size: 25px 25px, 25px 25px, 25px 25px, 5px 5px;
+    }
+}
