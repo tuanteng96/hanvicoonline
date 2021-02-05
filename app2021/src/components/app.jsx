@@ -18,10 +18,10 @@ export default class extends React.Component {
         routes: routes,
         on: {
           init: function () {
-            console.log("Mở lên");
+            //console.log("Mở lên");
           },
           pageInit: function () {
-            console.log("Khi quay lại");
+            //console.log("Khi quay lại");
           },
         },
         view: {
